@@ -11,6 +11,8 @@
     <button>Sign Up</button>
 </form>
 
+<%- include('partials/footer'); -%>
+
 <script>
     const form = document.querySelector('form');
     const emailError = document.querySelector('.email.error');
@@ -40,7 +42,7 @@
                 emailError.textContent = data.errors.email;
                 passwordError.textContent = data.errors.password;
             }
-            if(data.errors){
+            if(data.user){
                 location.assign('/');
             }
         }
@@ -49,5 +51,3 @@
         }
     });
     </script>
-
-<%- include('partials/footer'); -%>
